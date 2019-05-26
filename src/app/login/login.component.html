@@ -1,0 +1,35 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="ion-padding">
+
+<form  #form="ngForm" style="margin-top: 50px">
+
+ <ion-item>
+   <ion-label position="stacked">Name</ion-label>
+   <ion-input type="text" name="name" [(ngModel)]="name"></ion-input>
+ </ion-item>
+
+ <ion-item>
+   <ion-label position="stacked">Password</ion-label>
+   <ion-input  type="text" name="password" [(ngModel)]="password" ></ion-input>
+ </ion-item>
+
+ <ion-item  lines="none">
+  <ion-button color="primary" type="button" (click)="submit()">Login</ion-button>
+</ion-item>
+
+<ion-item  lines="none" *ngIf="isErrShown">
+    <ion-label color="danger">Name and password are required</ion-label>
+</ion-item>
+
+ </form>
+
+ </div>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-content *ngIf="userOrders">
+   <div class="toolbar">  
+       <ion-searchbar placeholder="search by id or description" (ionChange)="search($event)" [value]="searchVal" #mySearchBar style="margin-top: 10px;" color="primary" > </ion-searchbar>
+       <ion-button (click)="scan()" class="qr" style="box-shadow: none"><ion-icon name="qr-scanner"></ion-icon></ion-button>
+   </div>   
+
+      <h1>Orders</h1>
+    <ion-item lines='full' >
+        <ion-label>Order Id</ion-label>
+        <ion-label>User Id</ion-label>
+        <ion-label>Name</ion-label>
+        <ion-label>Address</ion-label>
+    </ion-item> 
+   
+    <ion-list inset="true">
+        <ion-item  *ngFor='let order of userOrders '  (click)="presentModal(order)">
+           <ion-label> {{order.id}}</ion-label>
+           <ion-label>{{userDetails.customerId}}</ion-label>
+           <ion-label>{{userDetails.name}}</ion-label>
+           <ion-label>{{userDetails.address}}</ion-label>
+        </ion-item> 
+    </ion-list>
+    <ion-item  lines="none" *ngIf="userOrders.length===0">No search results</ion-item>
+
+ </ion-content>
+      
+ <ion-content *ngIf="!userOrders">
+    <ion-item  lines="none" style="margin-top: 30px;">
+        <span>No orders at the moment</span>
+     </ion-item> 
+ </ion-content>
+      

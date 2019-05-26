@@ -1,0 +1,16 @@
+
+<ion-header>
+    <ion-toolbar >
+      <ion-title>
+        <span  *ngIf="!isNavShown">Cart-App</span>
+        <div class="nav">
+        <ul class="menuItems" *ngIf="isNavShown">
+          <li (click)="logOut()"><ion-item lines="none">Log out</ion-item></li>
+          <li (click)="goToHome()"><ion-item lines="none"><ion-icon name="add-circle-outline"></ion-icon></ion-item></li>                  
+          <li (click)="goToCart()"><ion-item lines="none"><ion-icon name="cart"></ion-icon></ion-item></li>      
+          <li (click)="goToOrders()"><ion-item lines="none"> <ion-icon name="card"></ion-icon></ion-item></li>                  
+        </ul>    
+        </div>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>

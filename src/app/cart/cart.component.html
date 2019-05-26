@@ -1,0 +1,23 @@
+<ion-content *ngIf="cartData">
+    <h1>Cart</h1>
+    <ion-item lines='full'>
+        <ion-label>Product ID</ion-label>
+        <ion-label>Description</ion-label>
+        <ion-label>Quantity</ion-label>
+     </ion-item> 
+    <ion-list inset="true">
+        <ion-item  *ngFor='let product of cartData '>
+           <ion-label>{{product.productId}}</ion-label>
+           <ion-label>{{product.description}}</ion-label>
+           <ion-label>{{product.amount}}</ion-label>
+        </ion-item> 
+    </ion-list>
+        <ion-button type="button"  expand="full" (click)="purchase()" class="cartBtn"  color="primary">Buy</ion-button>
+ </ion-content>
+      
+ <ion-content *ngIf="!cartData">
+  <ion-item lines="none" style="margin-top: 30px;">
+      <span>Cart is empty, please select products</span>
+  </ion-item>
+ </ion-content>
+      

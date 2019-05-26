@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <span style="float:right; color:blue;" (click)="closeModal()">close</span>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+        <h1>Receipt</h1>
+        <ion-item lines='full'> 
+            <ion-label>Product ID</ion-label>
+            <ion-label>Description</ion-label>
+            <ion-label>Quantity</ion-label>
+         </ion-item> 
+        <ion-list inset="true">
+            <ion-item  *ngFor='let product of cartData '>
+               <ion-label>{{product.productId}}</ion-label>
+               <ion-label>{{product.description}}</ion-label>
+               <ion-label>{{product.amount}}</ion-label>
+            </ion-item> 
+        </ion-list>
+     </ion-content>
+          
+

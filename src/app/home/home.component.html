@@ -1,0 +1,15 @@
+<!-- <app-header></app-header> -->
+<ion-content>
+<h1>Products List</h1>
+<ion-list inset="true" *ngFor='let product of products '>
+    <ion-item>
+       <ion-label>{{product.description}}</ion-label>
+       <ion-button type="button" (click)="addToCart(product)" class="cartBtn"  color="success">Add</ion-button>
+    </ion-item> 
+</ion-list>
+<ion-item>
+    <span class="btn" (click)="goToCart()">cart</span>
+ </ion-item> 
+
+  </ion-content>
+  
